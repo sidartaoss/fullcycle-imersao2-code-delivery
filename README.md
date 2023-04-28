@@ -118,6 +118,6 @@ Dentro da dinâmica do sistema:
   - ElasticSearch
   - Kibana
 
-## Sistema em Execução
+## Execução
 
 ![Sistema em execução](./images/execucao-sistema.png)
