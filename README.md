@@ -81,7 +81,8 @@ Dentro da dinâmica do sistema:
 
   - #### Como vai integrar os dados entre sistemas?
 
-    - Os dados que saem do simulador e vão para o _Kafka_ vão parar no _Kafka Connect_. O _Kafka Connect_ é uma ferramenta que auxilia na integração entre sistemas e, neste caso, todas as informações vão ser enviadas automaticamente para o _ElasticSearch_. Uma vez que isso acontece, é possível construir _dashboards_ no _Kibana_ para visualizar, por exemplo: 1. A quantidade de entregas que aconteceram; 2. Quantos _browsers_ estão abertos vendo as corridas acontecerem; 3. Os mapas mostrando o trajeto de cada rota feita em relação às entregas; 4. Quais rotas estão sendo mais requisitadas; 5. A quantidade de entregas por rota.
+    - Os dados que saem do simulador e vão para o _Kafka_ vão parar no _Kafka Connect_. O _Kafka Connect_ é uma ferramenta que auxilia na integração entre sistemas e, neste caso, todas as informações vão ser enviadas automaticamente para o _ElasticSearch_.
+    - Uma vez que isso acontece, é possível construir _dashboards_ no _Kibana_ para visualizar, por exemplo: 1. A quantidade de entregas que aconteceram; 2. Quantos _browsers_ estão abertos vendo as corridas acontecerem; 3. Os mapas mostrando o trajeto de cada rota feita em relação às entregas; 4. Quais rotas estão sendo mais requisitadas; 5. A quantidade de entregas por rota.
 
 > Escalabilidade
 
