@@ -73,7 +73,8 @@ Dentro da dinâmica do sistema:
   - #### Por que dados são copiados de um sistema para o outro para observabilidade?
 
     - De forma geral, atualmente, as aplicações funcionam dessa forma. Para a geração de análises estatísticas, _BigData_, etc., é feito uma cópia dos dados da aplicação principal para outro sistema.
-    - Isso tem a ver também com boas práticas, como as propostas na metodologia dos 12 Fatores (_Twelve-Factor App_). O Fator 11, por exemplo, recomenda tratar _logs_ como fluxos de eventos. Ora, em ambientes de _deploy_ de microsserviços, gerenciados por _clusters Kubernetes_, _PODs_ são automaticamente criados e destruídos a todo momento. Com isso, _logs_ de arquivos físicos são perdidos. Tratar _logs_ como fluxos de eventos e armazená-los em ferramentas de gerenciamento de _logs_, como o _ELK Stack - ElasticSearch, Logstash e Kibana_, permite acompanhar _logs_ em tempo real e até criar alertas de monitoramento.
+    - Isso tem a ver também com boas práticas, como as propostas na metodologia dos 12 Fatores (_Twelve-Factor App_). O Fator 11, por exemplo, recomenda tratar _logs_ como fluxos de eventos. Ora, em ambientes de _deploy_ de microsserviços, gerenciados por _clusters Kubernetes_, _PODs_ são automaticamente criados e destruídos a todo momento. Com isso, _logs_ de arquivos físicos são perdidos. 
+    - Tratar _logs_ como fluxos de eventos e armazená-los em ferramentas de gerenciamento de _logs_, como o _ELK Stack - ElasticSearch, Logstash e Kibana_, permite acompanhar _logs_ em tempo real e até criar alertas de monitoramento.
 
 
   > Kafka Connect
