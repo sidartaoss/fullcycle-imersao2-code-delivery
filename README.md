@@ -34,9 +34,9 @@ Dentro da dinâmica do sistema:
 
   - O simulador poderia enviar as posições diretamente ao _backend_ através de um _endpoint REST_. O que acontece é que o sistema que está recebendo a informação nem sempre está disponível 100% das vezes. Isso quer dizer que dados podem ser perdidos. E não perder nenhum dado sequer na requisição é um requisito do sistema.
 
-    - #### Como garantir que nenhuma informação seja perdida?
+  - #### Como garantir que nenhuma informação seja perdida?
 
-      - Para evitar a perda de dados, é utilizado um sistema de mensageria ou de _stream_ como estratégia de resiliência. Ele será o responsável por enviar e receber os dados entre as aplicações.
+    - Para evitar a perda de dados, é utilizado um sistema de mensageria ou de _stream_ como estratégia de resiliência. Ele será o responsável por enviar e receber os dados entre as aplicações.
 
 > Kafka
 
@@ -72,9 +72,10 @@ Dentro da dinâmica do sistema:
 
   - #### Por que copiar os dados de um sistema para outro?
 
-    - De forma geral, atualmente, as aplicações funcionam dessa forma. Para a geração de análises estatísticas, _BigData_, etc., é feito uma cópia dos dados da aplicação principal para outro sistema. Isso tem a ver também com as melhores práticas propostas na metodologia dos 12 Fatores (_Twelve-Factor App_). O fator 11 é sobre _logs_ e tratar _logs_ como fluxos de eventos.
-
+    - De forma geral, atualmente, as aplicações funcionam dessa forma. Para a geração de análises estatísticas, _BigData_, etc., é feito uma cópia dos dados da aplicação principal para outro sistema. Isso tem a ver também com boas práticas, como as propostas na metodologia dos 12 Fatores (_Twelve-Factor App_). O fator 11, por exemplo, recomenda tratar _logs_ como fluxos de eventos.
+    
     - Ora, em ambientes de _deploy_ de microsserviços, gerenciado por _clusters Kubernetes_, _PODs_ são automaticamente criados e destruídos a todo momento. Com isso, _logs_ de arquivos físicos são perdidos. Tratar _logs_ como fluxos de eventos e armazená-los em ferramentas de gerenciamento de _logs_, com o _ELK Stack - ElasticSearch, Logstash e Kibana_, permite acompanhar _logs_ em tempo real e até criar alertas de monitoramento.
+
 
   > Kafka Connect
 
