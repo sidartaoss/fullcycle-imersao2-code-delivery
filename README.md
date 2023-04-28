@@ -70,23 +70,17 @@ Dentro da dinâmica do sistema:
 
   > 12 Fatores
 
-  - #### Por que copiar os dados de um sistema para outro?
+  - #### Por que dados são copiados de um sistema para o outro para observabilidade?
 
     - De forma geral, atualmente, as aplicações funcionam dessa forma. Para a geração de análises estatísticas, _BigData_, etc., é feito uma cópia dos dados da aplicação principal para outro sistema.
-    - Isso tem a ver também com boas práticas, como as propostas na metodologia dos 12 Fatores (_Twelve-Factor App_). O fator 11, por exemplo, recomenda tratar _logs_ como fluxos de eventos. Ora, em ambientes de _deploy_ de microsserviços, gerenciado por _clusters Kubernetes_, _PODs_ são automaticamente criados e destruídos a todo momento. Com isso, _logs_ de arquivos físicos são perdidos. Tratar _logs_ como fluxos de eventos e armazená-los em ferramentas de gerenciamento de _logs_, com o _ELK Stack - ElasticSearch, Logstash e Kibana_, permite acompanhar _logs_ em tempo real e até criar alertas de monitoramento.
+    - Isso tem a ver também com boas práticas, como as propostas na metodologia dos 12 Fatores (_Twelve-Factor App_). O Fator 11, por exemplo, recomenda tratar _logs_ como fluxos de eventos. Ora, em ambientes de _deploy_ de microsserviços, gerenciado por _clusters Kubernetes_, _PODs_ são automaticamente criados e destruídos a todo momento. Com isso, _logs_ de arquivos físicos são perdidos. Tratar _logs_ como fluxos de eventos e armazená-los em ferramentas de gerenciamento de _logs_, como o _ELK Stack - ElasticSearch, Logstash e Kibana_, permite acompanhar _logs_ em tempo real e até criar alertas de monitoramento.
 
 
   > Kafka Connect
 
   - #### Como vai integrar os dados entre sistemas?
 
-    - Os dados que saem do simulador e vão para o _Kafka_ vão parar no _Kafka Connect_. O _Kafka Connect_ é uma ferramenta que auxilia na integração entre sistemas e, neste caso, todas as informações vão ser enviadas automaticamente para o _ElasticSearch_. Uma vez que isso acontece, é possível construir _dashboards_ no _Kibana_ para visualizar, por exemplo:
-
-      - A quantidade de entregas que aconteceram;
-      - Quantos _browsers_ estão abertos vendo as corridas acontecerem;
-      - Os mapas mostrando o trajeto de cada rota feita em relação às entregas;
-      - Quais rotas estão sendo mais requisitadas;
-      - A quantidade de entregas por rota.
+    - Os dados que saem do simulador e vão para o _Kafka_ vão parar no _Kafka Connect_. O _Kafka Connect_ é uma ferramenta que auxilia na integração entre sistemas e, neste caso, todas as informações vão ser enviadas automaticamente para o _ElasticSearch_. Uma vez que isso acontece, é possível construir _dashboards_ no _Kibana_ para visualizar, por exemplo: 1. A quantidade de entregas que aconteceram; 2. Quantos _browsers_ estão abertos vendo as corridas acontecerem; 3. Os mapas mostrando o trajeto de cada rota feita em relação às entregas; 4. Quais rotas estão sendo mais requisitadas; 5. A quantidade de entregas por rota.
 
 > Escalabilidade
 
